@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var editTextUser: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button
-    private lateinit var buttonAboutMe: Button
+    private lateinit var tvAboutMe: TextView
     private lateinit var tvGoRegister: TextView
 
     private lateinit var database: AppDatabase
@@ -47,14 +47,14 @@ class LoginActivity : AppCompatActivity() {
         editTextUser = findViewById(R.id.et_user)
         editTextPassword = findViewById(R.id.et_password)
         buttonLogin = findViewById(R.id.btn_login)
-        buttonAboutMe = findViewById(R.id.btn_about_me)
+        tvAboutMe = findViewById(R.id.tv_about_me)
 
         buttonLogin.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             initLogin(intent)
         }
 
-        buttonAboutMe.setOnClickListener {
+        tvAboutMe.setOnClickListener {
             val intent = Intent(this, Aboutme::class.java)
             startActivity(intent)
         }

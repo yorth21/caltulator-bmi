@@ -2,9 +2,9 @@
     <string name="app_name">splashCalculatorApp</string>
     <string name="calculadora_de_imc">Calculadora de IMC</string>
     <string name="login">Login</string>
-    <string name="tv_login">Ingresa tu usuario y contraseña</string>
+    <string name="tv_login">Iniciar sesión</string>
     <string name="tv_email">Usuario</string>
-    <string name="tv_password">Contraseña</string>
+    <string name="tv_password">Clave</string>
     <string name="btn_login">Iniciar sesión</string>
     <string name="tv_weight">Peso (kg)</string>
     <string name="tv_height">Altura (m)</string>
@@ -25,8 +25,8 @@
     <string name="login_failed">Usuario o contraseña incorrectos</string>
     <string name="enter_user_pass">Por favor, ingrese usuario y contraseña</string>
     <string name="register">Registro</string>
-    <string name="tv_register">Ingresa un usuario y contraseña</string>
-    <string name="tv_confirm_password">Confirmar Contraseña</string>
+    <string name="tv_register">Registrarse</string>
+    <string name="tv_confirm_password">Confirmar Clave</string>
     <string name="btn_register">Registrarse</string>
     <string name="btn_go_register">¿No tienes una cuenta? Regístrate</string>
     <string name="btn_records">Historial</string>
@@ -38,6 +38,7 @@
     <string name="password_limit">La contraseña debe tener al menos 6 caracteres</string>
     <string name="register_succesfull">Usuario registrado exitosamente</string>
     <string name="register_error">Error al registrar el usuario. Inténtalo de nuevo</string>
-    <string name="about_me">Creado por Jesús David Benavides Chicaiza</string>
+    <string name="about_me">Creado por Yorth21</string>
     <string name="about_me_title">Sobre mí</string>
+    <string name="tv_back">Regresar</string>
 </resources>
