@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">splashCalculatorApp</string>
+    <string name="calculadora_de_imc">BMI Calculator</string>
+    <string name="login">Login</string>
+    <string name="tv_login">Enter your username and password</string>
+    <string name="tv_email">Username</string>
+    <string name="tv_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="tv_weight">Weight (kg)</string>
+    <string name="tv_height">Height (m)</string>
+    <string name="btn_calculate_imc">Calculate BMI</string>
+    <string name="tv_result">Result:</string>
+    <string name="error_empty_fields">Please enter weight and height</string>
+    <string name="error_invalid_values">Weight and height must be greater than zero</string>
+    <string name="error_numeric_values">Please enter valid numeric values</string>
+    <string name="bmi_result">Your BMI is %.2f - %s</string>
+    <string name="unknown_category">Unknown category</string>
+    <string name="bmi_underweight">Underweight</string>
+    <string name="bmi_normal">Normal weight</string>
+    <string name="bmi_overweight">Overweight</string>
+    <string name="bmi_obesity_1">Obesity Grade I</string>
+    <string name="bmi_obesity_2">Obesity Grade II</string>
+    <string name="bmi_obesity_3">Obesity Grade III</string>
+    <string name="login_successful">Login Successful</string>
+    <string name="login_failed">Incorrect username or password</string>
+    <string name="enter_user_pass">Please enter username and password</string>
+    <string name="register">SignUp</string>
+    <string name="tv_register">Enter a username and password</string>
+    <string name="tv_confirm_password">Confirm Password</string>
+    <string name="btn_register">SignUp</string>
+    <string name="btn_go_register">Don\'t have an account? Sign up</string>
+    <string name="btn_records">Record</string>
+    <string name="text_imcrecords">BMI History</string>
+    <string name="weight_height_text">Weight: %1$.2f kg, Height: %2$.2f m</string>
+    <string name="bmi_text">BMI: %1$.2f</string>
+    <string name="username_form">Username cannot be empty</string>
+    <string name="password_form">Password cannot be empty</string>
+    <string name="password_limit">Password must be at least 6 characters long</string>
+    <string name="register_succesfull">User registered successfully</string>
+    <string name="register_error">Error registering user. Please try again.</string>
+    <string name="about_me">Created by Jesús David Benavides Chicaiza</string>
+    <string name="about_me_title">About me</string>
+</resources>
