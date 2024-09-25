@@ -30,7 +30,7 @@
     <string name="btn_register">Registrarse</string>
     <string name="btn_go_register">¿No tienes una cuenta? Regístrate</string>
     <string name="btn_records">Historial</string>
-    <string name="text_imcrecords">Historial IMC</string>
+    <string name="text_imcrecords">Historial</string>
     <string name="weight_height_text">Peso: %1$.2f kg, Altura: %2$.2f m</string>
     <string name="bmi_text">IMC: %1$.2f</string>
     <string name="username_form">Usuario no puede ir vacio</string>
@@ -41,4 +41,7 @@
     <string name="about_me">Creado por Yorth21</string>
     <string name="about_me_title">Sobre mí</string>
     <string name="tv_back">Regresar</string>
+    <string name="tv_r_bmi">IMC</string>
+    <string name="text_weight">Peso</string>
+    <string name="text_height">Altura</string>
 </resources>

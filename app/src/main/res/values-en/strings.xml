@@ -31,7 +31,7 @@
     <string name="btn_register">SignUp</string>
     <string name="btn_go_register">Don\'t have an account? Sign up</string>
     <string name="btn_records">Record</string>
-    <string name="text_imcrecords">BMI History</string>
+    <string name="text_imcrecords">History</string>
     <string name="weight_height_text">Weight: %1$.2f kg, Height: %2$.2f m</string>
     <string name="bmi_text">BMI: %1$.2f</string>
     <string name="username_form">Username cannot be empty</string>
@@ -42,4 +42,7 @@
     <string name="about_me">Created by Yorth21</string>
     <string name="about_me_title">About me</string>
     <string name="tv_back">Back</string>
+    <string name="tv_r_bmi">BMI</string>
+    <string name="text_weight">Weight</string>
+    <string name="text_height">Height</string>
 </resources>

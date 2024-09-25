@@ -1,5 +1,6 @@
 package com.nassican.splashcalculatorapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +18,8 @@ class IMCHistoryAdapter(
 
     class IMCViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val dateTimeTextView: TextView = itemView.findViewById(R.id.dateTimeTextView)
-        val weightHeightTextView: TextView = itemView.findViewById(R.id.weightHeightTextView)
+        val weightTextView: TextView = itemView.findViewById(R.id.weightTextView)
+        val heightTextView: TextView = itemView.findViewById(R.id.heightTextView)
         val bmiTextView: TextView = itemView.findViewById(R.id.bmiTextView)
     }
 
@@ -29,15 +31,12 @@ class IMCHistoryAdapter(
 
     override fun onBindViewHolder(holder: IMCViewHolder, position: Int) {
         val currentItem = imcRecords[position]
-        val weightHeightText = context.getString(
-            R.string.weight_height_text,
-            currentItem.weight,
-            currentItem.height
-        )
-        val bmiText = context.getString(R.string.bmi_text, currentItem.bmi)
+        // refactor
+        holder.bmiTextView.text = String.format("%.2f", currentItem.bmi)
+        holder.weightTextView.text = currentItem.weight.toString()
+        holder.heightTextView.text = currentItem.height.toString()
+
         holder.dateTimeTextView.text = "${currentItem.date} ${currentItem.time}"
-        holder.weightHeightTextView.text = weightHeightText
-        holder.bmiTextView.text = bmiText
     }
 
     override fun getItemCount() = imcRecords.size
