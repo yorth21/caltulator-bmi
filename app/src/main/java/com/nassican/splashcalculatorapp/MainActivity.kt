@@ -1,5 +1,6 @@
 package com.nassican.splashcalculatorapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -65,6 +66,12 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        findViewById<Button>(R.id.buttonViewHistory).setOnClickListener {
+            val intent = Intent(this, IMCHistoryActivity::class.java)
+            intent.putExtra("USER_ID", userId)
+            startActivity(intent)
         }
     }
 
@@ -150,9 +157,9 @@ class MainActivity : AppCompatActivity() {
             )
 
             val category = bmiCategories.entries.find { bmi in it.key }?.value
-                ?: Pair(getString(R.string.unknown_category), R.color.normal)
+                ?: Pair(getString(R.string.unknown_category), R.drawable.normal)
 
-            val result = String.format(getString(R.string.bmi_result), bmi, category.first)
+            val result = String.format(getString(R.string.bmi_result), bmi)
             showResult(result, category.second)
 
         } catch (e: NumberFormatException) {

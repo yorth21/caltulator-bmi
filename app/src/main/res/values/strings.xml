@@ -13,7 +13,7 @@
     <string name="error_empty_fields">Por favor, ingresa peso y altura</string>
     <string name="error_invalid_values">Peso y altura deben ser mayores que cero</string>
     <string name="error_numeric_values">Por favor, ingresa valores numéricos válidos</string>
-    <string name="bmi_result">Tu IMC es %.2f - %s</string>
+    <string name="bmi_result">Tu IMC es %.2f</string>
     <string name="unknown_category">Categoría desconocida</string>
     <string name="bmi_underweight">Bajo peso</string>
     <string name="bmi_normal">Peso normal</string>

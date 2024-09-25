@@ -14,7 +14,7 @@
     <string name="error_empty_fields">Please enter weight and height</string>
     <string name="error_invalid_values">Weight and height must be greater than zero</string>
     <string name="error_numeric_values">Please enter valid numeric values</string>
-    <string name="bmi_result">Your BMI is %.2f - %s</string>
+    <string name="bmi_result">Your BMI is %.2f</string>
     <string name="unknown_category">Unknown category</string>
     <string name="bmi_underweight">Underweight</string>
     <string name="bmi_normal">Normal weight</string>
