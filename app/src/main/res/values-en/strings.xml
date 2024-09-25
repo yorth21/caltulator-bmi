@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">splashCalculatorApp</string>
-    <string name="calculadora_de_imc">BMI Calculator</string>
+    <string name="calculadora_de_imc">Calculator</string>
     <string name="login">Login</string>
     <string name="tv_login">Login</string>
     <string name="tv_email">Username</string>
@@ -9,7 +9,7 @@
     <string name="btn_login">Login</string>
     <string name="tv_weight">Weight (kg)</string>
     <string name="tv_height">Height (m)</string>
-    <string name="btn_calculate_imc">Calculate BMI</string>
+    <string name="btn_calculate_imc">Calculate</string>
     <string name="tv_result">Result:</string>
     <string name="error_empty_fields">Please enter weight and height</string>
     <string name="error_invalid_values">Weight and height must be greater than zero</string>

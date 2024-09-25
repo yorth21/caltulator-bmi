@@ -2,21 +2,16 @@ package com.nassican.splashcalculatorapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.nassican.splashcalculatorapp.database.AppDatabase
-import com.nassican.splashcalculatorapp.database.dao.IMCRecordDao
 import com.nassican.splashcalculatorapp.database.model.IMCRecord
 import com.nassican.splashcalculatorapp.ui.IMCCircle
 import com.nassican.splashcalculatorapp.ui.IMCHistoryAdapter
@@ -35,10 +30,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editTextHeight: EditText
     private lateinit var buttonCalculate: Button
     private lateinit var textViewResult: TextView
-    private lateinit var colorIndicator: View
-    private lateinit var imcIndicator: IMCCircle
+    private lateinit var imgResult: ImageView
     private lateinit var database: AppDatabase
-    private lateinit var recyclerView: RecyclerView
     private lateinit var imcHistoryAdapter: IMCHistoryAdapter
     private var userId: Int = -1
 
@@ -55,9 +48,6 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
-
-        recyclerView = findViewById(R.id.imcHistoryRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
 
         database = AppDatabase.getDatabase(this)
 
@@ -76,12 +66,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        findViewById<Button>(R.id.buttonViewHistory).setOnClickListener {
-            val intent = Intent(this, IMCHistoryActivity::class.java)
-            intent.putExtra("USER_ID", userId)
-            startActivity(intent)
-        }
     }
 
     private fun initViews() {
@@ -89,16 +73,11 @@ class MainActivity : AppCompatActivity() {
         editTextHeight = findViewById(R.id.editTextHeight)
         buttonCalculate = findViewById(R.id.buttonCalculate)
         textViewResult = findViewById(R.id.textViewResult)
-        colorIndicator = findViewById(R.id.colorIndicator)
-        imcIndicator = findViewById(R.id.bmiGaugeView)
-
-        colorIndicator.setBackgroundColor(ContextCompat.getColor(this, R.color.unknown))
+        imgResult = findViewById(R.id.imgResult)
     }
 
     private fun setupRecyclerView() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
         imcHistoryAdapter = IMCHistoryAdapter(this, mutableListOf())
-        recyclerView.adapter = imcHistoryAdapter
     }
 
     private fun loadIMCHistory() {
@@ -162,29 +141,28 @@ class MainActivity : AppCompatActivity() {
             }
 
             val bmiCategories = mapOf(
-                (0.0..18.4) to Pair(getString(R.string.bmi_underweight), R.color.bajo_peso),
-                (18.5..24.99) to Pair(getString(R.string.bmi_normal), R.color.normal),
-                (25.0..29.99) to Pair(getString(R.string.bmi_overweight), R.color.sobre_peso),
-                (30.0..34.99) to Pair(getString(R.string.bmi_obesity_1), R.color.obeso_1),
-                (35.0..39.99) to Pair(getString(R.string.bmi_obesity_2), R.color.obeso_2),
-                (40.0..Double.MAX_VALUE) to Pair(getString(R.string.bmi_obesity_3), R.color.obeso_3)
+                (0.0..18.4) to Pair(getString(R.string.bmi_underweight), R.drawable.moderate_thinness),
+                (18.5..24.99) to Pair(getString(R.string.bmi_normal), R.drawable.normal),
+                (25.0..29.99) to Pair(getString(R.string.bmi_overweight), R.drawable.overweight),
+                (30.0..34.99) to Pair(getString(R.string.bmi_obesity_1), R.drawable.obese_1),
+                (35.0..39.99) to Pair(getString(R.string.bmi_obesity_2), R.drawable.obese_2),
+                (40.0..Double.MAX_VALUE) to Pair(getString(R.string.bmi_obesity_3), R.drawable.obese_3)
             )
 
             val category = bmiCategories.entries.find { bmi in it.key }?.value
-                ?: Pair(getString(R.string.unknown_category), R.color.unknown)
+                ?: Pair(getString(R.string.unknown_category), R.color.normal)
 
             val result = String.format(getString(R.string.bmi_result), bmi, category.first)
             showResult(result, category.second)
-            imcIndicator.setBMI(bmi)
 
         } catch (e: NumberFormatException) {
-            showResult(getString(R.string.error_numeric_values), R.color.unknown)
+            showResult(getString(R.string.error_numeric_values), R.color.normal)
         }
     }
 
-    private fun showResult(message: String, colorResId: Int) {
+    private fun showResult(message: String, imgResource: Int) {
         textViewResult.text = message
-        colorIndicator.setBackgroundColor(ContextCompat.getColor(this, colorResId))
+        imgResult.setImageResource(imgResource)
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }
